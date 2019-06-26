@@ -1,0 +1,38 @@
+body{
+    background-image: url(background.png);
+    background-size: 16%;
+}
+form{
+          margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+    
+    width: 20%;
+}
+input{
+    width: 100%;
+    margin-bottom: 2px;
+    
+}
+.formBtn{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5px;
+}
+button{
+    background-color: transparent;
+    border: 0px;
+    color: #ff6666;
+    font-weight: bold;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+#haveAcntBtn:hover, #dntHaveAcntBtn:hover{
+    color: #ff1a1a;
+    cursor: pointer;
+}
+
