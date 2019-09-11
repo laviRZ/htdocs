@@ -1,12 +1,10 @@
 <?php
-    error_reporting(0);
-
     require_once("db_login.php");
     require_once("Mail.php");
 
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = hash('sha512', $_POST['password']);
+    $username = $_REQUEST['username'];
+    $email = $_REQUEST['email'];
+    $password = hash('sha512', $_REQUEST['password']);
 
 
     if ($email == "") $email = "a";
@@ -19,7 +17,7 @@
             $sql = $dbc->query("SELECT ID FROM users WHERE email = '$email'");
             $row = mysqli_fetch_array($sql);
             $uid = $row['ID'];
-            echo "New record created successfully, verification e-mail sent.";
+            echo "New user created successfully, verification e-mail sent.";
             $mail->addAddress($email, $username);
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Verificate your account in my project!';
@@ -38,18 +36,3 @@
     }
     $dbc->close();
 ?>
-
-<html>
-
-    <head>
-        <title>Message from form</title>
-
-    </head>
-
-
-
-    <body>
-
-    </body>
-
-</html>
